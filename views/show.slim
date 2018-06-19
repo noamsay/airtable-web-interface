@@ -1,0 +1,13 @@
+h1
+  = @theartist.name
+p
+  = @theartist.bio
+div
+  .row
+    - @theartist.attachments.each do |image|
+      .col-sm-3
+        .box
+          img src=image["thumbnails"]["full"]["url"]
+
+div
+    <a href="/" class="btn btn-primary">Back to List</a>
