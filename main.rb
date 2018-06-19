@@ -16,6 +16,12 @@ require_relative "gallery"
 get '/' do
   gallery = Gallery.new(:api_key => 'key4hPsF3lTzceL6g', :app_key => 'appZyWY43bYd8NKBh', :table => 'Artists')
   @artists = gallery.all
+  slim :home, :layout => :layout, layout_engine: :erb
+end
+
+get '/artists' do
+  gallery = Gallery.new(:api_key => 'key4hPsF3lTzceL6g', :app_key => 'appZyWY43bYd8NKBh', :table => 'Artists')
+  @artists = gallery.all
   slim :index, :layout => :layout, layout_engine: :erb
 end
 
