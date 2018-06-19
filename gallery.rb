@@ -8,7 +8,7 @@ class Gallery
   def initialize(attributes = {})
     @client = Airtable::Client.new(attributes[:api_key])
     @table = @client.table(attributes[:app_key], attributes[:table])
-    @artists = @table.records
+    @artists = @table.records(:sort => ["Name", :asc])
   end
 
   def all

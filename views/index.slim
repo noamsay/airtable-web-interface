@@ -1,9 +1,12 @@
 h1 Artists
+p Click on the artist name to learn more
 - @artists.each do |artist|
   div
     / <a href="/artists/#{artist.id}">#{artist.name}</a>
     <a href="/artists/#{artist.id}">#{artist.name}</a>
-
-
+h1 Database
+p The corresponding Airtable base is the base below copied from the <a href="https://airtable.com/templates/arts-and-culture/expAZgezgpfCF8wVH/art-gallery">Art Gallery Management template</a>
+div
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shrebRxgIo3aTn07F?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
   / img src=@records.first.attachments.first["thumbnails"]["small"]["url"]
